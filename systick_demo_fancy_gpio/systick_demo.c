@@ -65,10 +65,10 @@ static void gpio_setup(void)
 }
 
 /*
-	Set up 1 kHz Systick interrupt as system-wide time base.
+Set up 1 kHz Systick interrupt as system-wide time base.
 
-	Adapted from: 
-	https://github.com/libopencm3/libopencm3-examples/blob/master/examples/stm32/f1/obldc/systick/systick.c
+Adapted from: 
+https://github.com/libopencm3/libopencm3-examples/blob/master/examples/stm32/f1/obldc/systick/systick.c
  */
 
 static void systick_setup(void)
@@ -90,7 +90,7 @@ static void systick_setup(void)
 }
 
 /*
-	Overrides the WEAK declaration of systick_tick_handler() in nvic.h:
+Overrides the WEAK declaration of systick_tick_handler() in nvic.h:
  */
 
 void sys_tick_handler(void)
@@ -104,17 +104,17 @@ void sys_tick_handler(void)
 }
 
 /*
-	At the moment, libopencm3 appears not to have macros/functions
-	explicitly defined to globally disable/enable interrupts.
-	Thus, the following two wrapper functions for some assembler are
-	required to achieve this.
+At the moment, libopencm3 appears not to have macros/functions
+explicitly defined to globally disable/enable interrupts.
+Thus, the following two wrapper functions for some assembler are
+required to achieve this.
 
-	Taken from:
-	http://permalink.gmane.org/gmane.comp.lib.libopencm3/29
+Taken from:
+http://permalink.gmane.org/gmane.comp.lib.libopencm3/29
  */
 
 /*
-	Globally ENABLE interrupts:
+Globally ENABLE interrupts:
  */
 
 static inline void reset_primask(void)
@@ -123,7 +123,7 @@ static inline void reset_primask(void)
 }
 
 /*
-	Globally DISABLE interrupts:
+Globally DISABLE interrupts:
  */
 
 static inline void set_primask(void)
