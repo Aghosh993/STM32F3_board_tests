@@ -75,34 +75,6 @@ static void setup_timer1_pwm(void)
 
 static void setup_timer2_pwm(void)
 {
-	// rcc_periph_clock_enable(RCC_GPIOA);
-	// gpio_set_output_options(GPIOA, GPIO_OTYPE_PP,
-	//                     GPIO_OSPEED_50MHZ, GPIO1 | GPIO2);
-	// gpio_mode_setup(GPIOA, GPIO_MODE_AF, GPIO_PUPD_NONE, GPIO1 | GPIO2);
-	// gpio_set_af(GPIOA, GPIO_AF1, GPIO1 | GPIO2);
-
-	// timer_reset(TIM2);
-	// rcc_periph_clock_enable(RCC_TIM2);
-
-	// timer_set_mode(TIM2, TIM_CR1_CKD_CK_INT, TIM_CR1_CMS_CENTER_1,
-	//            TIM_CR1_DIR_UP);
-	// timer_set_oc_mode(TIM2, TIM_OC2, TIM_OCM_PWM1);
-	// timer_set_oc_mode(TIM2, TIM_OC3, TIM_OCM_PWM1);
-
-	// timer_set_oc_value(TIM2, TIM_OC2, 16000);
-	// timer_set_oc_value(TIM2, TIM_OC3, 24000);
-	// timer_set_period(TIM2, 32000);
-
-	// timer_enable_preload(TIM2);
-	// timer_enable_oc_preload(TIM2, TIM_OC2);
-	// timer_enable_oc_preload(TIM2, TIM_OC3);
-	// timer_set_oc_slow_mode(TIM2, TIM_OC2);
-	// timer_set_oc_slow_mode(TIM2, TIM_OC3);
-
-	// timer_enable_counter(TIM2);
-	// timer_enable_oc_output(TIM2, TIM_OC2);
-	// timer_enable_oc_output(TIM2, TIM_OC3);
-
 	rcc_periph_clock_enable(RCC_GPIOA);
 	gpio_set_output_options(GPIOA, GPIO_OTYPE_PP,
 	                    GPIO_OSPEED_50MHZ, GPIO1 | GPIO2);
@@ -167,6 +139,10 @@ static void setup_timer3_pwm(void)
 	timer_enable_counter(TIM3);
 }
 
+/*
+	Probably not working:
+ */
+
 static void timer4_master_setup(void)
 {
 	timer_reset(TIM4);
@@ -181,6 +157,10 @@ static void timer4_master_setup(void)
 	timer_set_master_mode(TIM4, TIM_CR2_MMS_UPDATE);
 	timer_enable_counter(TIM4);
 }
+
+/*
+	Still not working:
+ */
 
 static void setup_sync_timer2_timer3_pwm(void)
 {
