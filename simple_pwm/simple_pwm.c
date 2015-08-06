@@ -54,7 +54,7 @@ static void setup_timer1_pwm(void)
 	gpio_mode_setup(GPIOA, GPIO_MODE_AF, GPIO_PUPD_NONE, GPIO8 | GPIO9);
 	gpio_set_af(GPIOA, GPIO_AF6, GPIO8 | GPIO9);
 
-	rcc_periph_clock_enable(RCC_TIM1);
+	rcc_periph_clock_enable(RCC_TIM1); // Don't need this, repeated. Test without this to verify..
 	timer_reset(TIM1);
 	timer_set_mode(TIM1, TIM_CR1_CKD_CK_INT, TIM_CR1_CMS_CENTER_1,
 	           TIM_CR1_DIR_UP);
